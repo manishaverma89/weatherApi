@@ -16,15 +16,18 @@ app.get("/" , function(req,res){
            const weatherData = JSON.parse(data);  // this will turn the data into actual javascript object
         //    console.log(weatherData);
            const temp = weatherData.main.temp; // will get the temp which in inside main 
-           console.log(temp);
+        //    console.log(temp);
+        res.write("<h1>Temperature is: " + temp + " degrees celcius " + " </h1> ");  //we can't use multiple send(),but we can use multiple res.write in combination with res.send().
            const description = weatherData.weather[0].description;
-           console.log(description);
+        //    console.log(description);
 
-       });
+        res.write("<p>Description is: " + description + "</p>");
+         res.send();
+       });    
 
-   });
+   });                                                              
 
-   res.send("Server is up and running.");
+//    res.send("Server is up and running.");
 });
 
 
