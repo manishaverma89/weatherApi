@@ -26,7 +26,7 @@ app.get("/" , function(req,res){
 
         //  Adding Icon Image
         const icon = weatherData.weather[0].icon;
-        const imageURL =  "http://openweathermap.org/img/wn/"+ icon + "@2x.png" ; //break the url with "const icon" 
+        const imageURL =  "http://openweathermap.org/img/wn/"+ icon + "@2x.png" ; //break the url with const "icon" 
         res.write("<img src = " + imageURL +">");
         // console.log(icon);
          res.send();
